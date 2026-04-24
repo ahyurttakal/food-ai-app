@@ -45,6 +45,24 @@ st.markdown("""
 }
 .metric-label { font-size: 15px; color: #6b7280; }
 .metric-value { font-size: 32px; font-weight: 800; color: #111827; }
+
+.info-card, .info-card * {
+    color: #111827 !important;
+}
+.info-card {
+    background-color: #ffffff !important;
+}
+.info-card h4 {
+    color: #111827 !important;
+    font-weight: 800 !important;
+}
+.info-card p {
+    color: #374151 !important;
+}
+.info-card b {
+    color: #111827 !important;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -61,27 +79,27 @@ i1, i2, i3 = st.columns(3)
 with i1:
     st.markdown("""
     <div class="info-card">
-        <h4>⏳ Bozulmaya Kalan Gün</h4>
-        <p><b>Tahmini Kalan Gün</b></p>
-        <p>Ürünün tahmini olarak kaç gün daha güvenli kalabileceğini gösterir.</p>
+        <h4 style="color:#111827 !important;">⏳ Bozulmaya Kalan Gün</h4>
+        <p style="color:#111827 !important;"><b style="color:#111827 !important;">Tahmini Kalan Gün</b></p>
+        <p style="color:#374151 !important;">Ürünün tahmini olarak kaç gün daha güvenli kalabileceğini gösterir.</p>
     </div>
     """, unsafe_allow_html=True)
 
 with i2:
     st.markdown("""
     <div class="info-card">
-        <h4>🚨 Risk Seviyesi</h4>
-        <p><b>Düşük / Orta / Yüksek / Kritik</b></p>
-        <p>Ürünün satış, sevkiyat veya kalite kontrol açısından risk durumunu gösterir.</p>
+        <h4 style="color:#111827 !important;">🚨 Risk Seviyesi</h4>
+        <p style="color:#111827 !important;"><b style="color:#111827 !important;">Düşük / Orta / Yüksek / Kritik</b></p>
+        <p style="color:#374151 !important;">Ürünün satış, sevkiyat veya kalite kontrol açısından risk durumunu gösterir.</p>
     </div>
     """, unsafe_allow_html=True)
 
 with i3:
     st.markdown("""
     <div class="info-card">
-        <h4>📊 Risk Skoru</h4>
-        <p><b>0 = güvenli, 1 = yüksek risk</b></p>
-        <p>Teknik karar desteği için kullanılan sayısal risk göstergesidir.</p>
+        <h4 style="color:#111827 !important;">📊 Risk Skoru</h4>
+        <p style="color:#111827 !important;"><b style="color:#111827 !important;">0 = güvenli, 1 = yüksek risk</b></p>
+        <p style="color:#374151 !important;">Teknik karar desteği için kullanılan sayısal risk göstergesidir.</p>
     </div>
     """, unsafe_allow_html=True)
 
