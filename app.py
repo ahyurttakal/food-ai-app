@@ -18,7 +18,7 @@ st.markdown("""
     padding: 22px;
     border-radius: 18px;
     background: linear-gradient(90deg, #7f1d1d, #dc2626);
-    color: white;
+    color: black;
     margin-bottom: 20px;
 }
 .info-card {
