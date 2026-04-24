@@ -78,7 +78,7 @@ i1, i2, i3 = st.columns(3)
 with i1:
     st.markdown("""
     <div class="info-card">
-        <h4 style="color:#111827 !important;">⏳ Bozulmaya Kalan Gün</h4>
+        <h4 style="color:#111827 !important;">Bozulmaya Kalan Gün</h4>
         <p style="color:#111827 !important;"><b style="color:#111827 !important;">Tahmini Kalan Gün</b></p>
         <p style="color:#374151 !important;">Ürünün tahmini olarak kaç gün daha güvenli kalabileceğini gösterir.</p>
     </div>
@@ -87,7 +87,7 @@ with i1:
 with i2:
     st.markdown("""
     <div class="info-card">
-        <h4 style="color:#111827 !important;">🚨 Risk Seviyesi</h4>
+        <h4 style="color:#111827 !important;">Risk Seviyesi</h4>
         <p style="color:#111827 !important;"><b style="color:#111827 !important;">Düşük / Orta / Yüksek / Kritik</b></p>
         <p style="color:#374151 !important;">Ürünün satış, sevkiyat veya kalite kontrol açısından risk durumunu gösterir.</p>
     </div>
@@ -96,7 +96,7 @@ with i2:
 with i3:
     st.markdown("""
     <div class="info-card">
-        <h4 style="color:#111827 !important;">📊 Risk Skoru</h4>
+        <h4 style="color:#111827 !important;">Risk Skoru</h4>
         <p style="color:#111827 !important;"><b style="color:#111827 !important;">0 = güvenli, 1 = yüksek risk</b></p>
         <p style="color:#374151 !important;">Teknik karar desteği için kullanılan sayısal risk göstergesidir.</p>
     </div>
