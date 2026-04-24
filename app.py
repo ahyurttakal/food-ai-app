@@ -25,9 +25,18 @@ st.markdown("""
     padding: 18px;
     border-radius: 16px;
     background-color: white;
+    color: #111827;
     border: 1px solid #e5e7eb;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     min-height: 130px;
+}
+
+.info-card h4 {
+    color: #111827;
+}
+
+.info-card p {
+    color: #374151;
 }
 .metric-card {
     padding: 20px;
