@@ -18,7 +18,7 @@ st.markdown("""
     padding: 22px;
     border-radius: 18px;
     background: linear-gradient(90deg, #7f1d1d, #dc2626);
-    color: black;
+    color: white;
     margin-bottom: 20px;
 }
 .info-card {
@@ -30,11 +30,9 @@ st.markdown("""
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     min-height: 130px;
 }
-
 .info-card h4 {
     color: #111827;
 }
-
 .info-card p {
     color: #374151;
 }
