@@ -7,7 +7,6 @@ import matplotlib.pyplot as plt
 
 st.set_page_config(
     page_title="Akıllı Et Raf Ömrü Tahmin Sistemi",
-    page_icon="🥩",
     layout="wide"
 )
 
@@ -68,12 +67,12 @@ st.markdown("""
 
 st.markdown("""
 <div class="title-box">
-    <h1>🥩 Akıllı Et Raf Ömrü Tahmin Paneli</h1>
+    <h1>Akıllı Et Raf Ömrü Tahmin Paneli</h1>
     <p>Sıcaklık ve mikrobiyal büyüme verisine göre bozulma riski, kalan raf ömrü ve risk/güven skoru hesaplanır.</p>
 </div>
 """, unsafe_allow_html=True)
 
-st.subheader("📌 Panelde Gösterilen 3 Ana Çıktı")
+st.subheader("Panelde Gösterilen 3 Ana Çıktı")
 i1, i2, i3 = st.columns(3)
 
 with i1:
@@ -105,7 +104,7 @@ with i3:
 
 st.divider()
 
-uploaded_file = st.file_uploader("📤 Excel dosyasını yükle", type=["xlsx", "xls"])
+uploaded_file = st.file_uploader("Excel dosyasını yükleyiniz", type=["xlsx", "xls"])
 
 if uploaded_file is None:
     st.info("Analiz için Excel dosyasını yükleyiniz.")
@@ -123,7 +122,7 @@ if missing:
 df = df.copy()
 df = df.sort_values(["Sample_ID", "Temperature_C", "Day"]).reset_index(drop=True)
 
-st.sidebar.header("⚙️ Ayarlar")
+st.sidebar.header("Ayarlar")
 
 threshold = st.sidebar.slider(
     "Bozulma eşiği - Total Viable Count",
@@ -186,12 +185,12 @@ df["risk_score"] = df["risk_score"].clip(0, 1)
 
 def risk_level(row):
     if row["spoiled_now"] == 1:
-        return "🔴 Bozulmuş / Kritik"
+        return "Bozulmuş / Kritik"
     if row["pred_shelf_life"] <= high_risk_days:
-        return "🔴 Yüksek Risk"
+        return "Yüksek Risk"
     elif row["pred_shelf_life"] <= low_risk_days:
-        return "🟡 Orta Risk"
-    return "🟢 Düşük Risk"
+        return "Orta Risk"
+    return "Düşük Risk"
 
 df["risk_level"] = df.apply(risk_level, axis=1)
 
@@ -274,7 +273,7 @@ if selected_temp != "Tümü":
 if selected_risk != "Tümü":
     filtered = filtered[filtered["risk_level"] == selected_risk]
 
-st.subheader("📋 Ürün Karar Tablosu")
+st.subheader("Ürün Karar Tablosu")
 
 result = filtered[[
     "Sample_ID",
@@ -316,7 +315,7 @@ styled = result.style.map(color_risk, subset=["Risk Seviyesi"]).format({
 
 st.dataframe(styled, use_container_width=True, height=420)
 
-st.subheader("📈 Görsel Analiz")
+st.subheader("Görsel Analiz")
 
 c1, c2 = st.columns(2)
 
@@ -337,7 +336,7 @@ with c2:
     ax.set_ylabel("Tahmini Kalan Gün")
     st.pyplot(fig)
 
-st.subheader("🧪 Numune Bazlı Raf Ömrü Eğrisi")
+st.subheader("Numune Bazlı Raf Ömrü Eğrisi")
 
 sample_for_plot = st.selectbox(
     "Grafik için numune seç",
@@ -359,13 +358,13 @@ ax1.set_ylabel("Tahmini Kalan Gün")
 ax1.legend(title="Sıcaklık")
 st.pyplot(fig)
 
-st.subheader("📥 Sonuçları İndir")
+st.subheader("Sonuçları İndir")
 
 download_df = result.copy()
 csv = download_df.to_csv(index=False).encode("utf-8-sig")
 
 st.download_button(
-    label="📥 Panel sonucunu CSV olarak indir",
+    label="Panel sonucunu CSV olarak indir",
     data=csv,
     file_name="raf_omru_risk_sonuclari.csv",
     mime="text/csv"
@@ -373,12 +372,10 @@ st.download_button(
 
 st.markdown("""
 ---
-### 🧠 Sistem Mantığı
+### Sistem Mantığı
 
 - **Tahmini Kalan Gün:** Model tarafından tahmin edilir.
 - **Risk Skoru:** Tahmini kalan gün azaldıkça 1'e yaklaşır.
 - **Risk Seviyesi:** Risk skoru ve mikrobiyal eşik değerine göre otomatik atanır.
-- **Önerilen Aksiyon:** Ticari karar desteği için üretilir.
-
-Bu panel bir MVP ürün çekirdeğidir. Gerçek saha kullanımı için sensör entegrasyonu, daha fazla gerçek veri ve validasyon önerilir.
+- **Önerilen Aksiyon:** Karar desteği için üretilir.
 """)
