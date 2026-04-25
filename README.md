@@ -1,5 +1,7 @@
 # Et Raf Ömrü Tahmin Sistemi (AI Tabanlı)
 
+https://food-ai-app-yoer.onrender.com/
+
 ## Genel Bakış
 
 Bu proje, sıcaklık ve mikrobiyal büyüme verilerini kullanarak et ürünlerinin raf ömrünü ve bozulma riskini tahmin eden yapay zeka tabanlı bir karar destek sistemidir.
